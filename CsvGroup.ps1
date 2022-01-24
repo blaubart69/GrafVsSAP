@@ -9,7 +9,7 @@ param(
 )
 Get-Content      $inputfile                                                                        |
 Select-Object    -Skip 1                                                                           |
-Where-Object     { $_ -ne [String]::Empty }                                                                     |
+Where-Object     { $_ -ne [String]::Empty }                                                        |
 ForEach-Object   { ([string]$_).TrimStart("`t") }                                                  |
 ConvertFrom-Csv  -Delimiter "`t"                                                                   |
 Group-Object     -Property Auftrag,ArbPlatz,Verursacher,Auftragsmenge,Mengeneinheit,Vorgang        |
